@@ -26,14 +26,25 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
 
     return (
         <div className='container mx-auto'>
-            <div className='max-w-4xl mx-auto'>
+            <div className='max-w-5xl mx-auto'>
                 <Image
                     src={blog.image}
                     alt={blog.title}
                     width={1024}
                     height={768}
-                    className='w-full h-[900] object-cover transition-transform group-hover:scale-105 duration-700'
+                    quality={100}
+                    className='w-full h-[600px] object-contain transition-transform group-hover:scale-105 duration-700'
                 />
+                <h1 className='text-2xl font-bold mb-5 mt-5 duration-700 text-center transition'>{blog.title}</h1>
+                <p className='text-lg text-center'>{blog.description}</p>
+
+                <Link href="/blog">
+                <div 
+                className='inline-block w-full px-4 py-2 bg-gray-400 text-white font-semibold text-center rounded-lg
+                         hover:bg-gray-600 duration-700 text-lg mb-5 mt-5' 
+                >Details
+                </div>
+            </Link>
             </div>
         </div>
     )
